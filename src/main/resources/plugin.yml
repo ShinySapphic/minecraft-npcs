@@ -1,0 +1,24 @@
+name: PathfindingNPC
+version: ${project.version}
+main: me.lucidus.pathfindingnpc.NPCPlugin
+api-version: 1.17
+author: Lucidus
+commands:
+  npc:
+    description: Standard NPC command.
+    usage: |
+      /npc test - Gets random info about NPC.
+  npcspawn:
+    description: NPC spawn command.
+  npcremove:
+    description: NPC remove command.
+  npcblock:
+    description: NPC block command for placing and breaking.
+  npcitem:
+    description: NPC item command for interacting with items.
+  npcinventory:
+    description: NPC inventory commands.
+    aliases: npcinv
+  npcset:
+    description: NPC set commands for various attributes such as food/health level.
+
