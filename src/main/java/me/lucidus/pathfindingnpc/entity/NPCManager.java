@@ -24,8 +24,8 @@ public class NPCManager {
     }
 
     public static void generateNPC(String name, Location location, UUID uuid, String texture, String signuature) {
-        MinecraftServer server = ((org.bukkit.craftbukkit.v1_17_R1.CraftServer) Bukkit.getServer()).getServer();
-        ServerLevel world = ((org.bukkit.craftbukkit.v1_17_R1.CraftWorld) location.getWorld()).getHandle();
+        MinecraftServer server = ((org.bukkit.craftbukkit.v1_18_R2.CraftServer) Bukkit.getServer()).getServer();
+        ServerLevel world = ((org.bukkit.craftbukkit.v1_18_R2.CraftWorld) location.getWorld()).getHandle();
         GameProfile profile = new GameProfile(uuid, name);
 
         profile.getProperties().put("textures", new Property("textures", texture, signuature));

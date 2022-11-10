@@ -29,10 +29,10 @@ import org.bukkit.FluidCollisionMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.v1_17_R1.block.CraftBlock;
-import org.bukkit.craftbukkit.v1_17_R1.entity.CraftEntity;
-import org.bukkit.craftbukkit.v1_17_R1.entity.CraftLivingEntity;
-import org.bukkit.craftbukkit.v1_17_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_18_R2.block.CraftBlock;
+import org.bukkit.craftbukkit.v1_18_R2.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_18_R2.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_18_R2.inventory.CraftItemStack;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
@@ -126,8 +126,8 @@ public abstract class PathfindingNPC extends ServerPlayer {
     }
 
     //Allows NPC to take damage after traveling dimension
-    public Entity b(ServerLevel worldserver, PlayerTeleportEvent.TeleportCause cause) {
-        Entity b = super.b(worldserver, cause);
+    public Entity changeDimension(ServerLevel worldserver, PlayerTeleportEvent.TeleportCause cause) {
+        Entity b = super.changeDimension(worldserver, cause);
         this.hasChangedDimension();
         return b;
     }
@@ -277,7 +277,7 @@ public abstract class PathfindingNPC extends ServerPlayer {
         BlockHitResult result = new BlockHitResult(new Vec3(loc.getX(), loc.getY(), loc.getZ()), this.getDirection().getOpposite(), new BlockPos(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), false);
         UseOnContext context = new UseOnContext(this, hand, result);
 
-        InteractionResult interactionResult = item.placeItem(context, hand);
+        InteractionResult interactionResult = item.useOn(context, hand);
 
         if (interactionResult != InteractionResult.CONSUME)
             return;

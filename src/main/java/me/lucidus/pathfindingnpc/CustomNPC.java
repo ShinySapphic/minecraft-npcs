@@ -36,8 +36,8 @@ public class CustomNPC {
     }
 
     private void generateNPC() {
-        MinecraftServer server = ((org.bukkit.craftbukkit.v1_17_R1.CraftServer) Bukkit.getServer()).getServer();
-        ServerLevel world = ((org.bukkit.craftbukkit.v1_17_R1.CraftWorld) location.getWorld()).getHandle();
+        MinecraftServer server = ((org.bukkit.craftbukkit.v1_18_R2.CraftServer) Bukkit.getServer()).getServer();
+        ServerLevel world = ((org.bukkit.craftbukkit.v1_18_R2.CraftWorld) location.getWorld()).getHandle();
         GameProfile profile = getProfile();
 
         this.npc = new ServerPlayer(server, world, profile);

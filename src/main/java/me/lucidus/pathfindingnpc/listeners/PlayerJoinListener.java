@@ -11,7 +11,7 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         for (NPC npcs : NPCManager.allNPCs) {
-            npcs.render(event.getPlayer()); event.getPlayer().getLocation()
+            npcs.render(event.getPlayer()); event.getPlayer().getLocation();
         }
     }
 }
